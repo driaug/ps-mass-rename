@@ -4,9 +4,8 @@ function Show-Menu {
     )
     Clear-Host
     Write-Host "================ $Title ================"
-    Write-Host "1: Press '1' for this option."
-    Write-Host "2: Press '2' for this option."
-    Write-Host "3: Press '3' for this option."
+    Write-Host "1: Run in current directory ($PSScriptRoot)"
+    Write-Host "2: Run in other directory"
     Write-Host "Q: Press 'Q' to quit."
 }
 
@@ -23,11 +22,6 @@ do {
         '2' {
             Clear-Host
             'You chose option #2'
-            #Call hier een andere functie of voer rechtstreeks hier code uit
-        } 
-        '3' {
-            Clear-Host
-            'You chose option #3'
             #Call hier een andere functie of voer rechtstreeks hier code uit
         } 
         'q' {
