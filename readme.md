@@ -42,6 +42,25 @@ directory
 | holidayPictures2.jpg
 ```
 
+## -extension
+
+If you wish to only rename files of a certain type you can specify them with the `-extension` flag.
+
+**Command**
+
+```powershell
+.\rename.ps1 -extension ".png"
+```
+
+**Result**
+
+```
+directory
+| rename0.png
+| rename1.png
+| dsc_001.jpg //Not affected
+```
+
 ## -verbose [toggle]
 
 Adding the `-verbose` flag will output every change that occurs. By default this flag is not toggled.

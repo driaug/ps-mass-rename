@@ -27,14 +27,27 @@ function Validate-Path{
 
 function Rename-All{
     $count = 1
-    Get-ChildItem -Path $path |
-    Foreach-Object {
-        $prev = $_.FullName
-        $new = Rename-Item -Path $_.FullName -NewName ($scheme + $script:count++  + $_.extension) -PassThru
-        if ($verbose) {
-            Write-Host "$prev => $new"
-        }
+    if ($extension) {
+        Get-ChildItem -Path $path | 
+        Where-Object {$_.Extension -eq $extension} |
+        Foreach-Object {
+            $prev = $_.FullName
+            $new = Rename-Item -Path $_.FullName -NewName ($scheme + $script:count++  + $_.extension) -PassThru
+            if ($verbose) {
+                Write-Host "$prev => $new"
+            }
+        }   
+    } else {
+        Get-ChildItem -Path $path |
+        Foreach-Object {
+            $prev = $_.FullName
+            $new = Rename-Item -Path $_.FullName -NewName ($scheme + $script:count++  + $_.extension) -PassThru
+            if ($verbose) {
+                Write-Host "$prev => $new"
+            }
+        }   
     }
+
 }
 
 Validate-Path $path
