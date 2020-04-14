@@ -1,6 +1,8 @@
  param (
     [System.IO.FileInfo]$path = $PSScriptRoot,
-    [string]$scheme = "rename"
+    [string]$scheme = "rename",
+    [string]$extension,
+    [switch]$verbose=$false
  )
 
 $global:unvalidPath = $false
@@ -27,8 +29,11 @@ function Rename-All{
     $count = 1
     Get-ChildItem -Path $path |
     Foreach-Object {
-        
-        Rename-Item -Path $_.FullName -NewName ($scheme + $script:count++  + $_.extension)
+        $prev = $_.FullName
+        $new = Rename-Item -Path $_.FullName -NewName ($scheme + $script:count++  + $_.extension) -PassThru
+        if ($verbose) {
+            Write-Host "$prev => $new"
+        }
     }
 }
 
