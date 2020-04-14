@@ -11,7 +11,7 @@ This script can change the name of files in the current directory or a specified
 **Command**
 
 ```powershell
-.\rename.ps1 -path C:\rename\in\this\folder
+.\rename.ps1 -path C:\rename\this\folder
 ```
 
 **Result**
@@ -40,4 +40,21 @@ directory
 | holidayPictures0.jpg
 | holidayPictures1.jpg
 | holidayPictures2.jpg
+```
+
+## -verbose [toggle]
+
+Adding the `-verbose` flag will output every change that occurs. By default this flag is not toggled.
+
+**Command**
+
+```powershell
+.\rename.ps1 -scheme "holidayPictures" -verbose
+```
+
+**Ouput**
+
+```
+C:\this\folder\dsc_002.jpg => C:\this\folder\holidayPictures0.jpg
+C:\this\folder\dsc_014.jpg => C:\this\folder\holidayPictures1.jpg
 ```
