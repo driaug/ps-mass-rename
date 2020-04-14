@@ -1,33 +1,40 @@
-function Show-Menu {
+ param (
+    [System.IO.FileInfo]$path = $PSScriptRoot,
+    [string]$scheme = "scheme-\x"
+ )
+
+$global:unvalidPath = $false
+
+function Validate-Path{
     param (
-        [string]$title = 'Powershell Mass Rename'
+        [ValidateScript({
+            if(-Not ($_ | Test-Path) ){
+                $global:unvalidPath = $true
+                throw "NonExistent"
+            } 
+            if(($_ | Test-Path -PathType Leaf) ){
+                $global:unvalidPath = $true
+                throw "NotAllowed"
+            }
+            return $true
+
+        })]
+        [System.IO.FileInfo]$path = $PSScriptRoot
     )
-    Clear-Host
-    Write-Host "================ $Title ================"
-    Write-Host "1: Run in current directory ($PSScriptRoot)"
-    Write-Host "2: Run in other directory"
-    Write-Host "Q: Press 'Q' to quit."
 }
 
-do {
-    Show-Menu
-    $input = Read-Host "Please make a selection "
-    switch ($input)
-    {
-        '1' {
-            Clear-Host
-            'You chose option #1'
-            #Call hier een andere functie of voer rechtstreeks hier code uit
-        } 
-        '2' {
-            Clear-Host
-            'You chose option #2'
-            #Call hier een andere functie of voer rechtstreeks hier code uit
-        } 
-        'q' {
-            return
-        }
-     }
-     pause
+function Rename-All{
+    $count = 1
+    Get-ChildItem -Path $path |
+    Foreach-Object {
+        
+        Rename-Item -Path $_.FullName -NewName ("test" + $script:count++  + $_.extension)
+    }
 }
-until ($input -eq 'q')
+
+Validate-Path $path
+if (!$global:unvalidPath) {
+    Rename-All
+}
+
+
