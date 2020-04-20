@@ -6,7 +6,7 @@ This script has been made by @Drieaugu and @Victonat0r (2019-2020 1ITF1) for the
 
 ## Get-Help
 
-Before using this script, make sure you understand its functionality . You can find a: description, list of parameters and examples via the built-in command `Get-Help .\rename.ps1`.
+Before using this script, make sure you understand its functionality . You can find a: description, list of parameters and examples via the built-in command `Get-Help .\rename.ps1` or [join the support server](https://discord.gg/nwpnt8B).
 
 ## -path
 
