@@ -6,6 +6,7 @@
    Various parameters allow you to specify which files should be renamed.
 .LINK
    Online version/repository: https://github.com/Drieaugu/ps-mass-rename
+   Discord support server: https://discord.gg/nwpnt8B
 .PARAMETER path
    Specifies the path, if not provided the current folder will be used.
 .PARAMETER scheme
