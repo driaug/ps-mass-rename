@@ -4,6 +4,10 @@ This script has been made by @Drieaugu and @Victonat0r (2019-2020 1ITF1) for the
 
 # Usage
 
+## Get-Help
+
+Before using this script, make sure you understand its functionality . You can find a: description, list of parameters and examples via the built-in command `Get-Help .\rename.ps1`.
+
 ## -path
 
 This script can change the name of files in the current directory or a specified directory. By default it will use the current directory, specify a custom one with the `-path` flag.
