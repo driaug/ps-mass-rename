@@ -1,6 +1,6 @@
 # Powershell Mass Rename
 
-This script has been made by @Drieaugu and @Victonat0r (2019-2020 1ITF1) for the Windows System Administration course. This script makes it easy to rename large batches of files in one go.
+This script has been made by @Drieaugu and @Victonator (2019-2020 1ITF1) for the Windows System Administration course. This script makes it easy to rename large batches of files in one go.
 
 # Usage
 
@@ -63,6 +63,25 @@ directory
 | rename0.png
 | rename1.png
 | dsc_001.jpg //Not affected
+```
+
+## -count
+
+With this flag you can alter the first number in the count. This parameter expects an int32 value.
+
+**Command**
+
+```powershell
+.\rename.ps1 -count 100
+```
+
+**Result**
+
+```
+directory
+| rename100.png
+| rename101.png
+| rename102.png
 ```
 
 ## -verbose [toggle]
