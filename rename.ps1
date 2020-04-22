@@ -29,6 +29,7 @@
     [System.IO.FileInfo]$path = $PSScriptRoot,
     [string]$scheme = "rename",
     [string]$extension,
+    [int]$count = 0,
     [switch]$verbose=$false
  )
 
@@ -53,7 +54,6 @@ function Validate-Path{
 }
 
 function Rename-All{
-    $count = 1
     if ($extension) {
         Get-ChildItem -Path $path | 
         Where-Object {$_.Extension -eq $extension} |
@@ -81,5 +81,3 @@ Validate-Path $path
 if (!$global:unvalidPath) {
     Rename-All
 }
-
-
