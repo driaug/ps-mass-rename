@@ -15,6 +15,8 @@
    Gives the ability to only rename files of a certain type, all if not provided.
 .PARAMETER verbose
    If toggled will output progress on the command line.
+.PARAMETER count
+   This alters the first number in the count
 .EXAMPLE
    ./rename.ps1 -scheme "holidayPictures" -verbose
    This example will rename all files in the current folder with holidayPicturesx,
