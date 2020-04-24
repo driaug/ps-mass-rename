@@ -48,7 +48,7 @@ directory
 
 ## -extension
 
-If you wish to only rename files of a certain type you can specify them with the `-extension` flag.
+If you wish to only rename files of a certain type you can specify them with the `-extension` flag. Default value is "all"
 
 **Command**
 
@@ -63,6 +63,25 @@ directory
 | rename0.png
 | rename1.png
 | dsc_001.jpg //Not affected
+```
+
+## -count
+
+With this flag you can alter the first number in the count. This parameter expects an int32 value.
+
+**Command**
+
+```powershell
+.\rename.ps1 -count 100
+```
+
+**Result**
+
+```
+directory
+| rename100.png
+| rename101.png
+| rename102.png
 ```
 
 ## -verbose [toggle]
@@ -80,4 +99,14 @@ Adding the `-verbose` flag will output every change that occurs. By default this
 ```
 C:\this\folder\dsc_002.jpg => C:\this\folder\holidayPictures0.jpg
 C:\this\folder\dsc_014.jpg => C:\this\folder\holidayPictures1.jpg
+```
+
+## -force [toggle]
+
+Adding the `-force` flag will make the script run without the user confirming the settings.
+
+**Command**
+
+```powershell
+.\rename.ps1 -force
 ```
