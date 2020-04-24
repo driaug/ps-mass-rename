@@ -98,5 +98,4 @@ if (!$global:unvalidPath) {
     } else {
         Rename-All
     }
-
 }

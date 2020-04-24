@@ -1,6 +1,6 @@
 # Powershell Mass Rename
 
-This script has been made by @Drieaugu and @Victonat0r (2019-2020 1ITF1) for the Windows System Administration course. This script makes it easy to rename large batches of files in one go.
+This script has been made by @Drieaugu and @Victonator (2019-2020 1ITF1) for the Windows System Administration course. This script makes it easy to rename large batches of files in one go.
 
 # Usage
 
